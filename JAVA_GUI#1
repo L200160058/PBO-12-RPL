@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gui;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author HP
+ */
+public class GUI2 {
+  public GUI2() {
+      JFrame frame = new JFrame();
+      JButton btnHalo = new JButton("Halo Sayang");
+      JButton btnSelamatTinggal = new JButton("Selamat Tinggal");
+      final JTextField txtPesan = new JTextField(20);
+      txtPesan.setText("Coba Buat Antarmuka");
+      btnHalo.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+          txtPesan.setText("Halo Sayang, Apa kabar ?");
+        }
+      });
+      btnSelamatTinggal.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+          txtPesan.setText("Selamat Tinggal Sayang");
+        }
+      });
+      Container contentPane = frame.getContentPane();
+        contentPane.setLayout(new FlowLayout());
+        contentPane.add(btnHalo);
+        contentPane.add(btnSelamatTinggal);
+        contentPane.add(txtPesan);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.show();
+   }
+    public static void main(String[] args) {
+      new GUI2();
+    }
+}
